@@ -1,0 +1,75 @@
+/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/include
+
+
+
+/home/ccoew/TE
+
+
+
+
+g++ -fPIC -shared -I/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/include  -I/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/include/linux -I/home/ccoew/TE -o /home/ccoew/TE/mynativelib.so /home/ccoew/TE/jnitest.cpp
+
+
+ java -Djava.library.path=/home/ccoew/TE JNITest
+
+
+
+
+
+
+[ccoew@localhost ~]$ su
+Password: 
+[root@localhost ccoew]# cd TE SEM2
+[root@localhost TE]# ls
+CN 3469  final   jnitest.cpp   RemoteSystemsTempFiles  TCP  udp_c
+CRC      final~  JNITest.java  SDL                     UDP
+[root@localhost TE]# pwd
+/home/ccoew/TE
+[root@localhost TE]# ^C
+[root@localhost TE]# javac JNITest.java
+[root@localhost TE]# javah JNITest
+[root@localhost TE]# ls
+CN 3469  final~         JNITest.h               SDL  udp_c
+CRC      JNITest.class  JNITest.java            TCP
+final    jnitest.cpp    RemoteSystemsTempFiles  UDP
+[root@localhost TE]# g++ -fPIC -shared -I/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/include  -I/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/include/linux -I/home/ccoew/TE -o /home/ccoew/TE/mynativelib.so /home/ccoew/TE/jnitest.cpp
+[root@localhost TE]# javac JNITest.java
+[root@localhost TE]# javah JNITest
+[root@localhost TE]# ls
+CN 3469  final~         JNITest.h      mynativelib.so          TCP
+CRC      JNITest.class  JNITest.java   RemoteSystemsTempFiles  UDP
+final    jnitest.cpp    JNITest.java~  SDL                     udp_c
+[root@localhost TE]# g++ -fPIC -shared -I/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/include  -I/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/include/linux -I/home/ccoew/TE -o /home/ccoew/TE/mynativelib.so /home/ccoew/TE/jnitest.cpp
+[root@localhost TE]# java -Djava.library.path=/home/ccoew/TE JNITest
+Following operations:
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+Enter the type of operation you want to perform1
+
+Result is 5
+Do you want to continue?[1/0]
+2
+[root@localhost TE]# java -Djava.library.path=/home/ccoew/TE JNITest
+Following operations:
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+Enter the type of operation you want to perform2
+
+Result is 1
+Do you want to continue?[1/0]
+1
+Following operations:
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+Enter the type of operation you want to perform3
+
+Result is 6
+Do you want to continue?[1/0]
+
+
